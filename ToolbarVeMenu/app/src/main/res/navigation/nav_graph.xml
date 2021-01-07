@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.toolbarvemenu.Fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_takvimFragment"
+            app:destination="@id/takvimFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ayarlarFragment"
+            app:destination="@id/ayarlarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/takvimFragment"
+        android:name="com.example.toolbarvemenu.Fragments.TakvimFragment"
+        android:label="fragment_takvim"
+        tools:layout="@layout/fragment_takvim" />
+    <fragment
+        android:id="@+id/ayarlarFragment"
+        android:name="com.example.toolbarvemenu.Fragments.AyarlarFragment"
+        android:label="fragment_ayarlar"
+        tools:layout="@layout/fragment_ayarlar" >
+        <action
+            android:id="@+id/action_ayarlarFragment_to_takvimFragment"
+            app:destination="@id/takvimFragment" />
+    </fragment>
+</navigation>

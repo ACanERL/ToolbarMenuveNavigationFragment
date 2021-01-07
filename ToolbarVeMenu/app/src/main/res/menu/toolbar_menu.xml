@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menum"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_menuopen"
+        android:title="">
+        <menu>
+   <item android:id="@+id/takvim"
+       android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:title="Takvim"
+
+       ></item>
+    <item android:id="@+id/ayarlar"
+        android:title="Ayarlar"
+         android:icon="@drawable/ic_ayarlar"
+        ></item>
+    <item android:id="@+id/cıkıs"
+        android:icon="@drawable/ic_exit"
+        android:title="Çıkış"
+        ></item>
+        </menu>
+    </item>
+</menu>
