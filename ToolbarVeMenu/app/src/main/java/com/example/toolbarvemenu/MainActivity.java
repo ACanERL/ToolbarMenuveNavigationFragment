@@ -11,15 +11,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.toolbarvemenu.Fragments.TakvimFragment;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class MainActivity extends AppCompatActivity  {
   Toolbar toolbar;
   NavController navController;
     @Override
@@ -40,10 +48,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()== R.id.takvim){
+            TakvimFragment takvimFragment=new TakvimFragment();
+
             navController=Navigation.findNavController(this,R.id.fragment);
             navController.popBackStack(R.id.takvimFragment,true);
             navController.popBackStack(R.id.ayarlarFragment,true);
             navController.navigate(R.id.action_mainFragment_to_takvimFragment);
+
+            return takvimFragment.onOptionsItemSelected(item);
         }else if(item.getItemId()==R.id.ayarlar){
             navController=Navigation.findNavController(this,R.id.fragment);
             navController.popBackStack(R.id.takvimFragment,true);
@@ -54,4 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
